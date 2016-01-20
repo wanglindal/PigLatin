@@ -20,6 +20,7 @@ public int findFirstVowel(String sWord)
 			{ 
 				return i;
 			}
+	
 	}
 	return -1;
 }
@@ -34,8 +35,23 @@ public String pigLatin(String sWord)
 	}
 	else if(findFirstVowel(sWord)== 0)
 	{
-		return sWord + "ay";
+		return sWord + "way";
 	}
+	
+	else if(sWord.substring(0,2).equals("qu"))
+	{
+		return sWord.substring(2,sWord.length()) + sWord.substring(0,2) + "ay";
+	}
+	else if(findFirstVowel(sWord)>0)
+	{
+		return sWord.substring(1, sWord.length()) + sWord.substring(0,1) + "ay" ; 
+	 }
+	 /*else if(!sWord.substring(0,2).equals("a") || !sWord.substring(0,2).equals("e") ||!sWord.substring(0,2).equals("i") || !sWord.substring(0,2).equals("o")|| !sWord.substring(0,2).equals("u"))
+	{
+		return sWord.substring(3, sWord.length()) + sWord.substring(0,2) + "ay" ; 
+	}*/
+	//use findFirstVowel(sWord) as the number
+
 	else
 	{
 		return "ERROR!";
